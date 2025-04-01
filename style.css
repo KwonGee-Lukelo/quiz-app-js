@@ -50,3 +50,62 @@ span {
   cursor: pointer;
   box-shadow: 1px 0 5px 2px rgb(29, 27, 27);
 }
+
+.bloc2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.btn__yes {
+  border: none;
+  background-color: rgb(8, 212, 110);
+  padding: 0.785em 2em;
+  margin: 1em 0;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+
+.btn__yes:hover {
+  background-color: rgb(1, 148, 75);
+  cursor: pointer;
+}
+
+.btn__no {
+  border: none;
+  background-color: rgb(212, 8, 18);
+  padding: 0.785em 2em;
+  margin: 1em 0;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+
+.btn__no:hover {
+  background-color: rgb(185, 3, 12);
+  cursor: pointer;
+}
+
+.btn__next {
+  border: none;
+  background-color: rgb(192, 212, 8);
+  padding: 0.785em 2em;
+  margin: 1em 0;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+
+.btn__next:hover {
+  background-color: rgb(157, 173, 5);
+  cursor: pointer;
+}
+
+.bloc3 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
