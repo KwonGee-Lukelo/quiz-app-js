@@ -42,8 +42,6 @@ function RunApp() {
   section.textContent = "";
   createStructure();
   QuestionAleatoire();
-  button();
-  console.log("Yes");
 }
 
 function createStructure() {
@@ -69,12 +67,8 @@ function QuestionAleatoire() {
   let viewQuestion = questions[indexeAleatoire];
 
   paraBloc2.textContent = viewQuestion;
+  paraBloc2.classList.add("div2__p");
 
-  bloc2.appendChild(paraBloc2);
-  section.appendChild(bloc2);
-}
-
-function button() {
   const bloc3 = document.createElement("div");
   bloc3.classList.add("bloc2");
 
@@ -87,6 +81,16 @@ function button() {
   btnNext.textContent = "Passer";
   btnNext.classList.add("btn__next");
 
+  //Implementation du button Passer
+  btnNext.addEventListener("click", () => {
+    let indexeAleatoire = Math.floor(Math.random() * 21);
+    let viewQuestion = questions[indexeAleatoire];
+
+    paraBloc2.textContent = viewQuestion;
+  });
+
+  bloc2.appendChild(paraBloc2);
+  section.appendChild(bloc2);
   bloc3.appendChild(btnYes);
   bloc3.appendChild(btnNo);
   bloc3.appendChild(btnNext);
