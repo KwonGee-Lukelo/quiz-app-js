@@ -51,9 +51,16 @@ span {
   box-shadow: 1px 0 5px 2px rgb(29, 27, 27);
 }
 
+.bloc1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
 .bloc2 {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin-top: 2em;
 }
@@ -101,11 +108,4 @@ span {
 .btn__next:hover {
   background-color: rgb(157, 173, 5);
   cursor: pointer;
-}
-
-.bloc3 {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 1.5em;
 }
