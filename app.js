@@ -30,21 +30,14 @@ const questions = [
 ];
 
 btnRun.addEventListener("click", RunApp);
-btnNext.addEventListener(
-  "click",
-  Passer
-); /*l'objet sur laquelle va s'executer cette fonction,
-elle n'existe pas encore raison pour laquelle on va le chercher dans le Document puis Body car 
-quand elle va être crée l'évenement puis s'associer à lui directement*/
 
 //Applcation Principale
 function RunApp() {
   section.textContent = "";
-  createStructure();
   QuestionAleatoire();
 }
 
-function createStructure() {
+/*function createStructure() {
   const bloc1 = document.createElement("div");
   const paraBloc1 = document.createElement("p");
   const tableBoard = document.createElement("p");
@@ -52,34 +45,37 @@ function createStructure() {
   paraBloc1.textContent = " SCORE :";
   tableBoard.textContent = 0;
 
-  bloc1.classList.add("bloc1");
 
-  bloc1.appendChild(paraBloc1);
-  bloc1.appendChild(tableBoard);
-  section.appendChild(bloc1);
-}
+}*/
 
 function QuestionAleatoire() {
+  const bloc1 = document.createElement("div");
   const bloc2 = document.createElement("div");
+  const bloc3 = document.createElement("div");
+
+  const paraBloc1 = document.createElement("p");
   const paraBloc2 = document.createElement("p");
+  const tableBoard = document.createElement("p");
+
+  paraBloc1.textContent = " SCORE :";
+  tableBoard.textContent = 0;
 
   let indexeAleatoire = Math.floor(Math.random() * 21);
   let viewQuestion = questions[indexeAleatoire];
 
+  let number = 0; //Une variable qui va nous servir dans l'incrementation du SCORE
+
   paraBloc2.textContent = viewQuestion;
-  paraBloc2.classList.add("div2__p");
 
-  const bloc3 = document.createElement("div");
-  bloc3.classList.add("bloc2");
-
-  btnYes.textContent = "Oui";
-  btnYes.classList.add("btn__yes");
-
-  btnNo.textContent = "Non";
-  btnNo.classList.add("btn__no");
-
-  btnNext.textContent = "Passer";
-  btnNext.classList.add("btn__next");
+  /*Implementation de la fonctionalité Pour verifier si la 
+  reponse est Extacte (OUI)*/
+  btnYes.addEventListener("click", () => {
+    if (true) {
+      number += 3;
+      tableBoard.textContent = number;
+      console.log(number);
+    }
+  });
 
   //Implementation du button Passer
   btnNext.addEventListener("click", () => {
@@ -89,6 +85,22 @@ function QuestionAleatoire() {
     paraBloc2.textContent = viewQuestion;
   });
 
+  btnYes.textContent = "Oui";
+  btnYes.classList.add("btn__yes");
+
+  btnNo.textContent = "Non";
+  btnNo.classList.add("btn__no");
+
+  btnNext.textContent = "Passer";
+  btnNext.classList.add("btn__next");
+
+  bloc1.classList.add("bloc1");
+  bloc3.classList.add("bloc2");
+
+  bloc1.appendChild(paraBloc1);
+  bloc1.appendChild(tableBoard);
+  section.appendChild(bloc1);
+
   bloc2.appendChild(paraBloc2);
   section.appendChild(bloc2);
   bloc3.appendChild(btnYes);
@@ -96,55 +108,3 @@ function QuestionAleatoire() {
   bloc3.appendChild(btnNext);
   section.appendChild(bloc3);
 }
-
-/*
-function TagCreat() {
-  const bloc1 = document.createElement("div");
-  const bloc2 = document.createElement("div");
-  const bloc3 = document.createElement("div");
-  const paraBloc1 = document.createElement("p");
-  const btnCheck = document.createElement("i");
-  const tableBoard = document.createElement("h2");
-  let score = document.createElement("p");
-}
-
-function Incrementation() {
-  //On genere un nombre aléatoire en se basant sur la taille du tableau
-  const indexeAleatoire = Math.floor(Math.random() * 21);
-  let viewQuestion = questions[indexeAleatoire]; //le nombre aléatoire obtenue est passé comme indexe au tableau
-
-  paraBloc1.textContent = viewQuestion; //on affiche la question obtenue aléatoirement dans le tableau
-}
-
-function DatAffiche() {
-  tableBoard.textContent = 0;
-  score.textContent = "SCORE : ";
-  btnYes.textContent = "Oui";
-  btnNo.textContent = "Non";
-  btnNext.textContent = "Passer";
-}
-
-function gry() {
-  //Ajout de class css
-  bloc2.classList.add("bloc2");
-  btnYes.classList.add("btn__yes");
-  btnNo.classList.add("btn__no");
-  btnNext.classList.add("btn__next");
-  bloc3.classList.add("bloc3");
-
-  bloc1.appendChild(paraBloc1);
-  bloc2.appendChild(btnYes);
-  bloc2.appendChild(btnNo);
-  bloc2.appendChild(btnNext);
-  bloc3.appendChild(score);
-  bloc3.appendChild(tableBoard);
-  section.appendChild(bloc3);
-  section.appendChild(bloc1);
-  section.appendChild(bloc2);
-}
-
-function Passer(e) {
-  const essaie = e.target.innerText(paraBloc1);
-  console.log(essaie);
-}
-*/
